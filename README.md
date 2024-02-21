@@ -5,10 +5,10 @@ Term: Spring 2024
 <img width="586" alt="Screenshot 2024-02-21 at 9 25 51 AM" src="https://github.com/yrcho2k/ADS-Spring2024-Project2-ShinyApp-Group3/assets/71814922/209a4b8d-889b-44cc-a31d-77438de1e3f0">
 
 + Team #3
-+ **Dominant Disaster Type by State and COVID-19 Cases**: + Team members
++ **Dominant Disaster Type by State and COVID-19 Cases**:
++ + Team members
 	+ Cho, Yerin
 	+ Chen, Tianyi
-	+ Zhang, Xinyuan
 	+ Li, Zhaoyang
 	+ Wang, Yinpei
 
