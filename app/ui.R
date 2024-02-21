@@ -3,13 +3,17 @@ if (!require("shiny")) {
   install.packages("shiny")
   library(shiny)
 }
-if (!require("shinyWidgets")) {
-  install.packages("shinyWidgets")
-  library(shinyWidgets)
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
 }
-if (!require("shinythemes")) {
-  install.packages("shinythemes")
-  library(shinythemes)
+if (!require("dplyr")) {
+  install.packages("dplyr")
+  library(dplyr)
+}
+if (!require("readr")) {
+  install.packages("readr")
+  library(readr)
 }
 if (!require("leaflet")) {
   install.packages("leaflet")
@@ -19,56 +23,84 @@ if (!require("leaflet.extras")) {
   install.packages("leaflet.extras")
   library(leaflet.extras)
 }
-
-# Define UI for application that draws a histogram
-shinyUI(
-    navbarPage(strong("Citi Bike Study",style="color: white;"), 
-               theme=shinytheme("cerulean"), # select your themes https://rstudio.github.io/shinythemes/
-#------------------------------- tab panel - Maps ---------------------------------
-                tabPanel("Maps",
-                         icon = icon("map-marker-alt"), #choose the icon for
-                         div(class = 'outer',
-                        # side by side plots
-                        fluidRow(
-                                splitLayout(cellWidths = c("50%", "50%"), 
-                                             leafletOutput("left_map",width="100%",height=1200),
-                                             leafletOutput("right_map",width="100%",height=1200))),
-                        #control panel on the left
-                        absolutePanel(id = "control", class = "panel panel-default", fixed = TRUE, draggable = TRUE,
-                                      top = 200, left = 50, right = "auto", bottom = "auto", width = 250, height = "auto",
-                                      tags$h4('Citi Bike Activity Comparison'), 
-                                      tags$br(),
-                                      tags$h5('Pre-covid(Left) Right(Right)'), 
-                                      prettyRadioButtons(
-                                                      inputId = "adjust_score",
-                                                      label = "Score List:", 
-                                                      choices = c("start_cnt", 
-                                                                  "end_cnt", 
-                                                                  "day_diff_absolute",
-                                                                  "day_diff_percentage"),
-                                                      inline = TRUE, 
-                                                      status = "danger",
-                                                      fill = TRUE
-                                                        ),
-                                      awesomeRadio("adjust_time", 
-                                                   label="Time",
-                                                    choices =c("Overall",
-                                                               "Weekday", 
-                                                               "Weekend"), 
-                                                    selected = "Overall",
-                                                    status = "warning"),
-                                      # selectInput('adjust_weather',
-                                      #             label = 'Adjust for Weather',
-                                      #             choices = c('Yes','No'), 
-                                      #             selected = 'Yes'
-                                      #             ),
-                                      style = "opacity: 0.80"
-                                      
-                                ), #Panel Control - Closing
-                            ) #Maps - Div closing
-                        ) #tabPanel maps closing
-   
+if (!require("plotly")) {
+  install.packages("plotly")
+  library(plotly)
+}
 
 
-    ) #navbarPage closing  
-) #Shiny UI closing    
+# Define UI
+ui <- fluidPage(
+  navbarPage(
+    title = "COVID-19 Cases Comparison",
+    
+    # Page 1: Heatmap of COVID-19 Cases
+    tabPanel("COVID-19 Cases Heatmap",
+             titlePanel("COVID-19 Cases Heatmap"),
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput("stateSelect", 
+                             "Select State(s):", 
+                             choices = unique(data_df$state), 
+                             selected = NULL, 
+                             multiple = TRUE),
+                 checkboxInput("weekend", "Compare by Weekends", value = FALSE)
+               ),
+               mainPanel(
+                 leafletOutput("map")
+               )
+             )
+    ),
+    
+    # Page 2: Comparison of COVID Cases Over Time
+    tabPanel("COVID Cases Over Time",
+             titlePanel("COVID Cases Over Time by State"),
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput("stateSelectTime", 
+                             "Select State(s):", 
+                             choices = unique(data_df$state), 
+                             selected = NULL, 
+                             multiple = TRUE),
+                 checkboxInput("weekendTime", "Compare by Weekends", value = FALSE)
+               ),
+               mainPanel(
+                 plotOutput("timeComparisonPlot")
+               )
+             )
+    ),
+    
+    # Page 3: Comparison of Total COVID Cases by State
+    tabPanel("Total Cases by State",
+             titlePanel("Total COVID Cases by State"),
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput("stateSelectTotal", 
+                             "Select State(s):", 
+                             choices = unique(data_df$state), 
+                             selected = NULL, 
+                             multiple = TRUE)
+               ),
+               mainPanel(
+                 plotOutput("stateComparisonPlot")
+               )
+             )
+    ),
+    
+    # Page 4: Dominant Disaster Type by State
+    tabPanel("Dominant Disaster Type",
+             titlePanel("Dominant Disaster Type by State"),
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput("incidentTypeSelect", 
+                             "Select Incident Type:", 
+                             choices = unique(data_og$incidentType), 
+                             selected = "Biological")
+               ),
+               mainPanel(
+                 leafletOutput("mapDisaster")
+               )
+             )
+    )
+  )
+)
