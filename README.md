@@ -18,19 +18,34 @@ The **learning goals** for this project is:
 
 *The above general statement about project 2 can be removed once you are finished with your project. It is optional.
 
-## Project Title Lorem ipsum dolor sit amet
-Term: Fall 2023
+## Dominant Disaster Type by State and COVID-19 Cases
+Term: Spring 2024
 
 + Team #
-+ **Projec title**: + Team members
-	+ team member 1
-	+ team member 2
-	+ team member 3
-	+ team member 4
-	+ team member 5
- 	+ team member 6
++ **Dominant Disaster Type by State and COVID-19 Cases**: + Team members
+	+ Cho, Yerin
+	+ Chen, Tianyi
+	+ Zhang, Xinyuan
+	+ Li, Zhaoyang
+	+ Wang, Yinpei
 
-+ **Project summary**: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
++ **Project summary**: 
+- Overview
+The purpose of this project is to visualize and analyze the dominant disaster types by state and COVID-19 cases using an interactive Shiny web application. The application consists of four visualization pages, each providing unique insights into disaster occurrences and COVID-19 cases across different states.
+
+- Visualization Pages
+1. Heatmap of Dominant Disaster Types
+This page displays a heatmap visualization showing the dominant disaster types by state.
+Users can select a specific incident type from the dropdown menu to explore the distribution of that particular disaster type across states.
+2. COVID-19 Cases Heatmap
+The COVID-19 Cases Heatmap page presents a geographical heatmap illustrating the distribution of COVID-19 cases across different states.
+Users have the option to select specific states and compare cases over weekends using a checkbox.
+3. Total COVID Cases by State
+This page showcases a comparative plot of total COVID-19 cases by state.
+Users can select multiple states from the dropdown menu to visualize and compare the total number of cases.
+4. COVID Cases Comparison Over Time
+The COVID Cases Comparison page provides insights into COVID-19 cases over time and across different states.
+Users can select multiple states and choose to compare cases over weekends using a checkbox. The visualization includes a line plot depicting the trend of COVID-19 cases over time for the selected states.
 
 + **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
