@@ -8,32 +8,32 @@
 #
 ###############################Install Related Packages #######################
 if (!require("shiny")) {
-    install.packages("shiny")
-    library(shiny)
+  install.packages("shiny")
+  library(shiny)
 }
-if (!require("leaflet")) {
-    install.packages("leaflet")
-    library(leaflet)
-}
-if (!require("leaflet.extras")) {
-    install.packages("leaflet.extras")
-    library(leaflet.extras)
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
 }
 if (!require("dplyr")) {
-    install.packages("dplyr")
-    library(dplyr)
+  install.packages("dplyr")
+  library(dplyr)
 }
-if (!require("magrittr")) {
-    install.packages("magrittr")
-    library(magrittr)
+if (!require("readr")) {
+  install.packages("readr")
+  library(readr)
 }
-if (!require("mapview")) {
-    install.packages("mapview")
-    library(mapview)
+if (!require("leaflet")) {
+  install.packages("leaflet")
+  library(leaflet)
 }
-if (!require("leafsync")) {
-    install.packages("leafsync")
-    library(leafsync)
+if (!require("leaflet.extras")) {
+  install.packages("leaflet.extras")
+  library(leaflet.extras)
+}
+if (!require("plotly")) {
+  install.packages("plotly")
+  library(plotly)
 }
 
 
