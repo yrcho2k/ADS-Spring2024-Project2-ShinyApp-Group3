@@ -1,27 +1,10 @@
 # Project 2: Shiny App Development
-
-### [Project Description](doc/project2_desc.md)
-
-Term: Fall 2023
-
-![screenshot](doc/figs/map.jpg)
-
-In this second project of GR5243 Applied Data Science, we develop a *Exploratory Data Analysis and Visualization* shiny app using one of **the OpenFEMA data sets** of your choice. See [Project 2 Description](doc/project2_desc.md) for more details.  
-
-The **learning goals** for this project is:
-
-- business intelligence for data science
-- data cleaning
-- data visualization
-- systems development/design life cycle
-- shiny app/shiny server
-
-*The above general statement about project 2 can be removed once you are finished with your project. It is optional.
-
 ## Dominant Disaster Type by State and COVID-19 Cases
 Term: Spring 2024
 
-+ Team #
+<img width="586" alt="Screenshot 2024-02-21 at 9 25 51 AM" src="https://github.com/yrcho2k/ADS-Spring2024-Project2-ShinyApp-Group3/assets/71814922/209a4b8d-889b-44cc-a31d-77438de1e3f0">
+
++ Team #3
 + **Dominant Disaster Type by State and COVID-19 Cases**: + Team members
 	+ Cho, Yerin
 	+ Chen, Tianyi
